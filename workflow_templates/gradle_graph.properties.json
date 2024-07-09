@@ -1,0 +1,14 @@
+{
+    "name": "GOV.UK OneLogin Gradle Dependency Submission",
+    "description": "Workflow for submitting gradle dependencies to GHAS",
+    "iconName": "octicon package-dependents",
+    "categories": [
+        "Java"
+    ],
+    "filePatterns": [
+        "gradle",
+        "gradlew",
+        "build.gradle",
+        "gradle.properties"
+    ]
+}

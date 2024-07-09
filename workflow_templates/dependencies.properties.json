@@ -1,0 +1,18 @@
+{
+    "name": "GOV.UK OneLogin Dependency Check",
+    "description": "Workflow for checking dependencies are up to date before submission",
+    "iconName": "octicon package-dependencies",
+    "categories": [
+        "Java",
+        "TypeScript"
+    ],
+    "filePatterns": [
+        "gradle",
+        "gradlew",
+        "build.gradle",
+        "gradle.properties",
+        "package.json",
+        "yarn.lock",
+        "package-lock.json"
+    ]
+}
