@@ -1,0 +1,14 @@
+{
+    "name": "GOV.UK OneLogin Checkov Check",
+    "description": "Workflow for running checkov against your infrastructure as code",
+    "iconName": "octicon package-dependencies",
+    "categories": [
+        "cloudformation",
+        "terraform",
+        "security"
+    ],
+    "filePatterns": [
+        "template.yaml",
+        "*.tf"
+    ]
+}
