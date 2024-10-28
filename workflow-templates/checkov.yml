@@ -1,0 +1,12 @@
+name: Checkov GHAS Submission
+
+on:
+  push:
+    branches: [ $default-branch ]
+
+permissions:
+  contents: write
+
+jobs:
+  dependency-submission:
+    uses: govuk-one-login/.github/.github/workflows/checkov.yml@e3caa6e3d5fc7b3794bec3c00f9d8db1e7446888 # v0
