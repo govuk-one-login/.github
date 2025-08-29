@@ -1,6 +1,8 @@
 on:
   workflow_call:
-  pull_request
+  pull_request:
+    branches:
+     - "**"
 
 jobs:
   checkov-scan:
