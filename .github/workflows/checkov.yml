@@ -1,6 +1,6 @@
 on:
   workflow_call:
-  pull_request:
+  pull_request
 
 jobs:
   checkov-scan:
