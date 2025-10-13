@@ -12,7 +12,7 @@ It also contains some [defaults for documents across the rest of the org](https:
 
 ## Workflows
 
-In the workflow-templates directory, it contains reusable workflows that can be used across the organisation as an entire workflow, and appear within the "add workflow" screen for all repos in the organisation:
+In the workflow-templates directory, it contains [reusable workflows](https://docs.github.com/en/actions/how-tos/reuse-automations/create-workflow-templates) that [can be used](https://docs.github.com/en/actions/how-tos/write-workflows/use-workflow-templates) across the organisation as an entire workflow, and appear within the "add workflow" screen for all repos in the organisation:
 
 <img width="1235" height="888" alt="image" src="https://github.com/user-attachments/assets/da628f55-f5f6-4f64-b00f-4ed87228f209" />
 
