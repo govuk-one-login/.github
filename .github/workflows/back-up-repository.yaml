@@ -1,0 +1,36 @@
+name: Back up this repository
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Create bundle
+      run: git bundle create ${GITHUB_REPOSITORY#*/}.bundle --all
+    - name: Verify bundle
+      run: git bundle verify ${GITHUB_REPOSITORY#*/}.bundle
+    - name: Assume AWS role
+      uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
+      with:
+        # This is an organization variable
+        role-to-assume: ${{ vars.psre_github_backup_role_arn }}
+        aws-region: eu-west-2
+    - name: Copy to S3
+      env:
+        # This is an organization variable
+        S3_BUCKET: ${{ vars.psre_github_backup_s3_bucket }}
+      run: >
+        aws s3api put-object \
+            --bucket ${S3_BUCKET} \
+            --key ${GITHUB_REPOSITORY}/${GITHUB_REPOSITORY#*/}.bundle \
+            --tagging refs/heads/main=$(/usr/bin/git log -1 --format=%H) \
+            --body ${GITHUB_REPOSITORY#*/}.bundle
