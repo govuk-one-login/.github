@@ -4,7 +4,9 @@ on:
   workflow_call:
   workflow_dispatch:
 
-permissions: read-all
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   backup:
