@@ -1,0 +1,16 @@
+name: Back up this repository
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  backup:
+    uses: govuk-one-login/.github/.github/workflows/back-up-repository.yaml@eb988f8b387a34e9c28ecbb1f680cbc078325585 # main
