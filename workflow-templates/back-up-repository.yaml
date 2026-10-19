@@ -13,4 +13,4 @@ permissions:
 
 jobs:
   backup:
-    uses: govuk-one-login/.github/.github/workflows/back-up-repository.yaml@09813e74147659024cce965b1872d6cf3d21512a # main
+    uses: govuk-one-login/.github/.github/workflows/back-up-repository.yaml@a043c2d5e5581de403c35303bb7a3c2cd4496e1f # main
